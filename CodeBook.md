@@ -147,8 +147,11 @@ fBodyGyroJerkMag
 The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
+
 std(): Standard deviation
+
 meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
 angle(): Angle between to vectors.
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are 
