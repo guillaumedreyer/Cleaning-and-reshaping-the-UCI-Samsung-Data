@@ -5,12 +5,8 @@ The tidy dataset showed in "average_activity.txt" displays 88 variables:
 
 1. 'SUBJECT': This is an integer variable, ranging from 1 to 30, indicating the subject.
 
-
 2. 'ACTIVITY': This is a character variable describing the activity of the subject
-during which the measurements were made. There are 6 activity levels: 
-
-"walking", "walking_upstairs", "walking_downstairs", "sitting", "standing", "laying". 
-
+during which the measurements were made. There are 6 activity levels: "walking", "walking_upstairs", "walking_downstairs", "sitting", "standing", "laying". 
 
 3. 86 numeric variables: These variables correspond to the measurements available in the
 "Samsung data" that indicates a mean or a standard deviation value. Note that the 
