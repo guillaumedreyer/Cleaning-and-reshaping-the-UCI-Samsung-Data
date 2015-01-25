@@ -1,6 +1,8 @@
 Feature Selection 
 =================
 
+###Description of the dataset "average_activity.txt":
+
 The tidy dataset showed in "average_activity.txt" displays 88 variables:
 
 1. 'SUBJECT': This is an integer variable, ranging from 1 to 30, indicating the subject.
@@ -100,10 +102,10 @@ measurements.
 [85] "angle(Y,gravityMean)"                
 [86] "angle(Z,gravityMean)"
 
+###Variable description:
 
 Here is a short description of the meaning of these variables. (EXTRACT, FOR THE MOST 
 PART, FROM THE "features_info.txt" CONTAINED IN THE 'Samsung_Data' DIRECTORY).
-
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial 
 raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) 
@@ -111,57 +113,53 @@ were captured at a constant rate of 50 Hz. Then they were filtered using a media
 and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove 
 noise. Similarly, the acceleration signal was then separated into body and gravity 
 acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass 
-Butterworth filter with a corner frequency of 0.3 Hz. 
-
+Butterworth filter with a corner frequency of 0.3 Hz.
 
 Subsequently, the body linear acceleration and angular velocity were derived in time 
 to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of 
 these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, 
-tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing
 fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag,
-fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+tBodyAcc-XYZ  
+tGravityAcc-XYZ  
+tBodyAccJerk-XYZ  
+tBodyGyro-XYZ  
+tBodyGyroJerk-XYZ  
+tBodyAccMag  
+tGravityAccMag  
+tBodyAccJerkMag  
+tBodyGyroMag  
+tBodyGyroJerkMag  
+fBodyAcc-XYZ  
+fBodyAccJerk-XYZ  
+fBodyGyro-XYZ  
+fBodyAccMag  
+fBodyAccJerkMag  
+fBodyGyroMag  
+fBodyGyroJerkMag  
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-
-std(): Standard deviation
-
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-
-angle(): Angle between to vectors.
+mean(): Mean value  
+std(): Standard deviation  
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency  
+angle(): Angle between to vectors  
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are 
 used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+gravityMean  
+tBodyAccMean  
+tBodyAccJerkMean  
+tBodyGyroMean  
+tBodyGyroJerkMean  
 
 
 
@@ -171,8 +169,7 @@ Analysis
 The analysis performed by the "run_analysis.R" which produces the tidy dataset 
 "average_activity.txt" does the following.
 
-0. Downloads the zip file containing the data from the UCI url 'https://d396qusza40orc.cloudfront.net/
-getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. Creates a directory "Samsung_Data" in the working directory, unzips the downloaded zip file and stores its content in the directory "Samsung_Data".
+0. Downloads the zip file containing the data from the UCI url 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. Creates a directory "Samsung_Data" in the working directory, unzips the downloaded zip file and stores its content in the directory "Samsung_Data".
 
 
 1. Opens and extracts the training and test "X" datasets, and "y" datasets, contained in the directory "Samsung_Data". Then merges these datasets all together to a single dataset "DF".
