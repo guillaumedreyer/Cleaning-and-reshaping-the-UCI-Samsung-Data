@@ -102,7 +102,7 @@ measurements.
 
 
 Here is a short description of the meaning of these variables. (EXTRACT, FOR THE MOST 
-PART, FROM THE "README.txt" OF THE samsung data").
+PART, FROM THE "features_info.txt" CONTAINED IN THE 'Samsung_Data' DIRECTORY).
 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial 
@@ -165,20 +165,20 @@ tBodyGyroJerkMean
 Analysis
 ========
 
-The analysis performed by the "run_analysis.R" that produces the tidy dataset 
-"average_activity.txt" is the following.
+The analysis performed by the "run_analysis.R" which produces the tidy dataset 
+"average_activity.txt" does the following.
 
-1. Gets all the training and test X datasets, Y datasets available in the Samsung dataset,
-then merges these datasets.
-
-
-2. Appropriately labels the data set with descriptive variable names, and then extracts 
-the variables corresponding to "mean" and "standard deviation" measurements.
+0. Downloads the zip file containing the data from the UCI url 'https://d396qusza40orc.cloudfront.net/
+getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'. Creates a directory "Samsung_Data" in the working directory, unzips the downloaded zip file and stores its content in the directory "Samsung_Data".
 
 
-3. Replaces the integer value indicating the activity ("ACTIVITY" column) in the merged
-dataset with descriptive activity.
+1. Opens and extracts the training and test "X" datasets, and "y" datasets, contained in the directory "Samsung_Data". Then merges these datasets all together to a single dataset "DF".
 
 
-4. Create an independent tidy dataset with the average of each variable for each activity
- and each subject. The tidy dataset is stored in the "average_activity.txt". 
+2. Appropriately relabels the merged dataset "DF" with the more descriptive variable names contained in the txt file "features.txt". Then extracts from the dataset "DF" all the variables corresponding to "mean" and "standard deviation" measurements. The extracted dataset is assigned to the variable "DF". 
+
+
+3. Replaces the integer value, ranging from 1 to 6, indicating the activity ("ACTIVITY" column) in the dataset "DF" with descriptive activity names contained in the txt file "activity_lables.txt". These descriptive activity names are: "walking", "walking_upstairs", "walking_downstairs", "sitting", "standing", "laying".
+
+
+4. Creates an independent tidy dataset assigned to the variable "average_activity". The dataset "average_activity" displays the average of each variable showed in the dataset "DF", for each activity and each subject. The tidy dataset "average_activity" is then stored in a txt file called "average_activity.txt". 
