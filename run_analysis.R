@@ -11,30 +11,13 @@ getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
 
 working_directory <- getwd()
 
+download.file(url = UCI_link,
+              destfile = paste(working_directory,
+                         '/UCI_Samsung_Galaxy_S_data.zip',
+                         sep= '')) 
 
-download(url = UCI_link,
-         dest = paste(working_directory,
-                      '/UCI_Samsung_Galaxy_S_data.zip',
-                      sep= ''),
-         mode = "wb") 
-
-
-
-
-#download.file(url = UCI_link,
-#destfile = paste(working_directory, 
- #                              '/UCI_Samsung_Galaxy_S_data.zip',
-  #                             sep = ''),
-   #           method = 'curl',
-    #          mode = 'wb')
-
-#temp <- tempfile()
-
-#download.file(UCI_link,
- #             temp, 
-  #            method = 'curl',
-   #           mode = 'wb')
-
+# Unzip the zip file and store the content in 
+# the "Samsung_Data" directory.
 
 path_to_zip_file <- paste(working_directory, 
                           '/UCI_Samsung_Galaxy_S_data.zip',
@@ -43,20 +26,6 @@ path_to_zip_file <- paste(working_directory,
 unzip(path_to_zip_file,
       overwrite = T,
       exdir = "Samsung_Data")
-
-
-
-# Unzip the zip file and store the content in 
-# the "Samsung_Data" directory.
-
-#path_to_zip_file <- paste(working_directory, 
- #                         '/UCI_Samsung_Galaxy_S_data.zip',
-  #                        sep = '')
-
-#unzip(zipfile = path_to_zip_file,
- #     overwrite = T,
-  #    exdir = "Samsung_Data")
-
 
 
 # Question 1: Access the training and test 'X' datasets, 
