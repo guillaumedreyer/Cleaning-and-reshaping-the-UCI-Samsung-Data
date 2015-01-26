@@ -1,11 +1,7 @@
 
-# 0. Preliminaries: Get the data and store them in 
-# the working directory.
+# 0. Preliminaries: Get the data and store them in the working directory.
 
 # Download the data to the working directory. 
-
-library(downloader)
-
 UCI_link <- 'https://d396qusza40orc.cloudfront.net/
 getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip' 
 
@@ -16,9 +12,7 @@ download.file(url = UCI_link,
                          '/UCI_Samsung_Galaxy_S_data.zip',
                          sep= '')) 
 
-# Unzip the zip file and store the content in 
-# the "Samsung_Data" directory.
-
+# Unzip the zip file and store the content in the "Samsung_Data" directory.
 path_to_zip_file <- paste(working_directory, 
                           '/UCI_Samsung_Galaxy_S_data.zip',
                           sep = '')
@@ -28,9 +22,9 @@ unzip(path_to_zip_file,
       exdir = "Samsung_Data")
 
 
+
 # Question 1: Access the training and test 'X' datasets, 
 # the training and test 'y' datasets, and merge the datasets. 
-
 
 # Extract the training and test 'X' and 'y' datasets and merge them together.
 X_train <- read.table('./Samsung_Data/UCI HAR Dataset/train/X_train.txt', quote= '')
@@ -45,14 +39,8 @@ DF <- cbind(y_merged, X_merged)
 
 
 
-# Question 4 and 2. 
-
-# Appropriately label the data set 
-# with descriptive variable names.
-
-# Extract the features corresponding to "mean" or
-# "std" (standard deviation) measurements. 
-
+# Question 4 and 2. Appropriately label the data set with descriptive variable names.
+# Then extract the features corresponding to "mean" or "std" (standard deviation) measurements. 
 
 # Rename the variables of the 'DF' dataset.
 features <- read.table('./Samsung_Data/UCI HAR Dataset/features.txt',
@@ -61,9 +49,7 @@ features <- read.table('./Samsung_Data/UCI HAR Dataset/features.txt',
 X_variable_names <- as.character(features[[2]])
 colnames(DF) <- c('ACTIVITY', X_variable_names)
 
-# Identify the variables of the 'DF' dataset 
-# corresponding to "mean" and "std" measurements.
-
+# Identify the variables of the 'DF' dataset corresponding to "mean" and "std" measurements.
 index <- sort(c(grep('mean',X_variable_names),
                 grep('Mean',X_variable_names),
                 grep('std',X_variable_names)))
